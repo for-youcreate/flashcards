@@ -1,0 +1,155 @@
+:root {
+  --bg: #f5f5f5;
+  --fg: #222;
+  --card-bg: #fff;
+  --accent: #0078d4;
+}
+
+body.dark {
+  --bg: #121212;
+  --fg: #f5f5f5;
+  --card-bg: #1e1e1e;
+  --accent: #4fc3f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  gap: 24px;
+}
+
+.card-section,
+.form-section,
+.list-section {
+  background: rgba(255,255,255,0.7);
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.card {
+  width: 100%;
+  max-width: 320px;
+  height: 180px;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  border: 2px solid var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.25s, box-shadow 0.25s;
+  transform-style: preserve-3d;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.small-btn {
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.add-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.add-form input {
+  flex: 1;
+  min-width: 120px;
+  padding: 6px;
+}
+
+.import-export {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#wordList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#wordList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.word-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.delete-btn {
+  color: #e53935;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.learned-toggle {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* スマホ最適化 */
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
