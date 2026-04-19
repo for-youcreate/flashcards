@@ -1,6 +1,6 @@
 /* 全体 */
 body {
-    font-family: "Noto Sans JP", sans-serif;
+    font-family: "Noto Sans JP", sans-serif; /* ← フォント追加 */
     margin: 0;
     padding: 20px;
     background: #f5f5f5;
@@ -38,7 +38,7 @@ body.dark button {
     color: #fff;
 }
 
-/* ⭐ ダークモード時のリストの視認性改善 */
+/* ⭐ ダークモード時のリストの視認性改善（今回の修正） */
 body.dark #wordList li {
     background: #333;
     color: #fff;
