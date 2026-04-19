@@ -17,10 +17,34 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div id="app"></div>
+  <h1>単語カードメーカー <span id="themeToggle">🌙 / ☀</span></h1>
+
+  <div id="card" class="card">単語がありません</div>
+
+  <div class="controls">
+    <button id="next">次へ</button>
+    <button id="shuffle">シャッフル</button>
+    <button id="resetAll">全削除</button>
+  </div>
+
+  <div class="add-area">
+    <input id="frontInput" placeholder="表（英語）">
+    <input id="backInput" placeholder="裏（日本語）">
+    <button id="addBtn">追加</button>
+  </div>
+
+  <div class="import-export">
+    <button id="exportBtn">JSONエクスポート</button>
+    <input type="file" id="importInput" accept="application/json">
+  </div>
+
+  <ul id="wordList"></ul>
+
   <script src="script.js"></script>
 </body>
 </html>
