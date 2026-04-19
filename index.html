@@ -1,50 +1,40 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- Google Search Console 所有権確認 -->
-  <meta name="google-site-verification" content="skqhzpp7R-R9AoKY1qaBhLw7tC9WTi47NvhQl7YDg2w" />
-
-  <!-- SEO -->
-  <title>単語カードメーカー｜無料で使える単語帳作成アプリ</title>
-  <meta name="description" content="無料で使える単語カードメーカー。英単語や暗記カードを簡単に作成・シャッフル・学習できます。スマホ対応で学生にも最適。" />
-
-  <!-- OGP -->
-  <meta property="og:title" content="単語カードメーカー｜無料で使える単語帳作成アプリ" />
-  <meta property="og:description" content="英単語や暗記カードを簡単に作成できる無料アプリ。スマホ対応。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://for-youcreate.github.io/flashcards/" />
-  <meta property="og:image" content="https://for-youcreate.github.io/flashcards/ogp.png" />
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>単語カードメーカー</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <h1>単語カードメーカー <span id="themeToggle">🌙 / ☀</span></h1>
 
-  <div id="card" class="card">単語がありません</div>
+    <header>
+        <h1>単語カードメーカー</h1>
+        <button id="themeToggle" class="icon-btn">🌙</button>
+    </header>
 
-  <div class="controls">
-    <button id="next">次へ</button>
-    <button id="shuffle">シャッフル</button>
-    <button id="resetAll">全削除</button>
-  </div>
+    <div class="card" id="card">単語を追加してね</div>
 
-  <div class="add-area">
-    <input id="frontInput" placeholder="表（英語）">
-    <input id="backInput" placeholder="裏（日本語）">
-    <button id="addBtn">追加</button>
-  </div>
+    <div class="controls">
+        <button id="nextBtn">次へ</button>
+        <button id="shuffleBtn">シャッフル</button>
+        <button id="deleteAllBtn">全削除</button>
+    </div>
 
-  <div class="import-export">
-    <button id="exportBtn">JSONエクスポート</button>
-    <input type="file" id="importInput" accept="application/json">
-  </div>
+    <div class="add-area">
+        <input id="wordInput" placeholder="英語">
+        <input id="meaningInput" placeholder="日本語">
+        <button id="addBtn">追加</button>
+    </div>
 
-  <ul id="wordList"></ul>
+    <div class="import-export">
+        <button id="exportBtn">JSONエクスポート</button>
+        <button id="importBtn">JSONインポート</button>
+        <input type="file" id="fileInput" style="display:none;">
+    </div>
 
-  <script src="script.js"></script>
+    <ul id="wordList"></ul>
+
+    <script src="script.js"></script>
 </body>
 </html>

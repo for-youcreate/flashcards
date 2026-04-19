@@ -1,119 +1,142 @@
-/* 全体の基本設定 */
+/* 全体 */
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 20px;
-  background: #f5f5f5;
-  color: #333;
-  text-align: center; /* 全体を中央揃え */
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+    color: #333;
+    text-align: center;
 }
 
-/* タイトルだけ左揃え */
+/* ヘッダー */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 h1 {
-  text-align: left;
-  margin-left: 10px;
-  font-size: 24px;
-  font-weight: bold;
+    margin: 0;
+    text-align: left;
 }
 
 /* ダークモード */
 body.dark {
-  background: #222;
-  color: #eee;
+    background: #222;
+    color: #eee;
 }
 
 body.dark .card {
-  background: #333;
-  color: #fff;
+    background: #333;
+    color: #fff;
 }
 
 body.dark button {
-  background: #444;
-  color: #fff;
+    background: #444;
+    color: #fff;
 }
 
 /* カード */
 .card {
-  width: 90%;
-  max-width: 350px;
-  margin: 20px auto;
-  padding: 40px 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  font-size: 24px;
-  cursor: pointer;
-  transition: transform 0.15s;
+    width: 90%;
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.3s;
 }
 
-.card.flip {
-  transform: rotateY(90deg);
+.card:hover {
+    transform: scale(1.02);
 }
 
-/* ボタン共通 */
+/* ボタン */
 button {
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  background: #4a90e2;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.2s;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #4a90e2;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
-  opacity: 0.85;
+    opacity: 0.85;
 }
 
-/* ボタンの並び（中央揃え） */
+/* アイコンボタン（🌙/☀） */
+.icon-btn {
+    font-size: 20px;
+    background: #eee;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.icon-btn:hover {
+    background: #ddd;
+}
+
+/* ボタンの並び */
 .controls,
 .add-area,
 .import-export {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
 }
 
 /* 入力欄 */
 input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 /* 単語リスト */
 #wordList {
-  width: 90%;
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 0;
-  list-style: none;
-  text-align: left; /* リストは左揃えの方が読みやすい */
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 0;
+    list-style: none;
+    text-align: left;
 }
 
 #wordList li {
-  background: white;
-  padding: 10px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .word-meta {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .learned-toggle {
-  cursor: pointer;
-  color: #4a90e2;
+    cursor: pointer;
+    color: #4a90e2;
 }
 
 .delete-btn {
-  cursor: pointer;
-  color: #e24a4a;
+    cursor: pointer;
+    color: #e24a4a;
 }
