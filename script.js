@@ -137,13 +137,21 @@ fileInput.addEventListener("change", (e) => {
     reader.readAsText(file);
 });
 
-// ダークモード切り替え
+// ⭐ ダークモード切り替え（UI改善版）
 let isDark = false;
 
 themeToggle.addEventListener("click", () => {
     isDark = !isDark;
     document.body.classList.toggle("dark");
+
+    // 絵文字 → アイコンボタン風に
     themeToggle.textContent = isDark ? "☀" : "🌙";
+
+    // ボタンのアニメーション
+    themeToggle.style.transform = "scale(0.85)";
+    setTimeout(() => {
+        themeToggle.style.transform = "scale(1)";
+    }, 120);
 });
 
 // 初期表示
