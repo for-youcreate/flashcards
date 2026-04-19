@@ -1,8 +1,7 @@
-// 単語データ
+
 let words = [];
 let currentIndex = 0;
 
-// 要素取得
 const card = document.getElementById("card");
 const nextBtn = document.getElementById("nextBtn");
 const shuffleBtn = document.getElementById("shuffleBtn");
@@ -16,7 +15,6 @@ const importBtn = document.getElementById("importBtn");
 const fileInput = document.getElementById("fileInput");
 const themeToggle = document.getElementById("themeToggle");
 
-// カード表示
 function showCard() {
     if (words.length === 0) {
         card.textContent = "単語を追加してね";
@@ -26,7 +24,6 @@ function showCard() {
     card.textContent = item.word;
 }
 
-// カードをクリック → 日本語に切り替え
 card.addEventListener("click", () => {
     if (words.length === 0) return;
 
@@ -38,21 +35,18 @@ card.addEventListener("click", () => {
     }
 });
 
-// 次へ
 nextBtn.addEventListener("click", () => {
     if (words.length === 0) return;
     currentIndex = (currentIndex + 1) % words.length;
     showCard();
 });
 
-// シャッフル
 shuffleBtn.addEventListener("click", () => {
     if (words.length === 0) return;
     currentIndex = Math.floor(Math.random() * words.length);
     showCard();
 });
 
-// 全削除
 deleteAllBtn.addEventListener("click", () => {
     if (!confirm("本当に全部削除しますか？")) return;
     words = [];
@@ -60,7 +54,6 @@ deleteAllBtn.addEventListener("click", () => {
     showCard();
 });
 
-// 単語追加
 addBtn.addEventListener("click", () => {
     const word = wordInput.value.trim();
     const meaning = meaningInput.value.trim();
@@ -75,7 +68,6 @@ addBtn.addEventListener("click", () => {
     showCard();
 });
 
-// リスト更新
 function updateList() {
     wordList.innerHTML = "";
 
@@ -110,7 +102,6 @@ function updateList() {
     });
 }
 
-// JSON エクスポート
 exportBtn.addEventListener("click", () => {
     const blob = new Blob([JSON.stringify(words, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -121,7 +112,6 @@ exportBtn.addEventListener("click", () => {
     a.click();
 });
 
-// JSON インポート
 importBtn.addEventListener("click", () => fileInput.click());
 
 fileInput.addEventListener("change", (e) => {
@@ -137,21 +127,13 @@ fileInput.addEventListener("change", (e) => {
     reader.readAsText(file);
 });
 
-// ⭐ ダークモード切り替え（UI改善）
 let isDark = false;
 
 themeToggle.addEventListener("click", () => {
     isDark = !isDark;
     document.body.classList.toggle("dark");
-
     themeToggle.textContent = isDark ? "☀" : "🌙";
-
-    themeToggle.style.transform = "scale(0.85)";
-    setTimeout(() => {
-        themeToggle.style.transform = "scale(1)";
-    }, 120);
 });
 
-// 初期表示
 showCard();
 updateList();
